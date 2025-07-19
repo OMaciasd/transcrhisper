@@ -1,0 +1,13 @@
+*env/
+*.env
+*.log
+*.sqlite3
+__pycache__/
+*.py*
+audios/
+uploads/
+temp/
+results/
+logs/
+models/
+transcripts/
