@@ -1,0 +1,17 @@
+{
+  "name": "transcrhisper",
+  "version": "1.0.0",
+  "description": "Whisper transcription project with commitlint support",
+  "scripts": {
+    "lint:commits": "commitlint --from=HEAD~1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+}

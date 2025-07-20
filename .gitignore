@@ -5,9 +5,3 @@
 __pycache__/
 *.py*
 audios/
-uploads/
-temp/
-results/
-logs/
-models/
-transcripts/
