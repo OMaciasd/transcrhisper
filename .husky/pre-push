@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Get the current branch name
+current_branch="$(git symbolic-ref --short HEAD)"
+
+# Define the protected branch
+protected_branch="main"
+
+if [ "$current_branch" = "$protected_branch" ]; then
+  echo "🚫 Direct push to '$protected_branch' is not allowed."
+  echo "✅ Please work on a feature or development branch and create a Pull Request instead."
+  exit 1
+fi
