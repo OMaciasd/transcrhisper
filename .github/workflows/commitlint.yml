@@ -1,0 +1,23 @@
+# .github/workflows/commitlint.yml
+name: Lint Commits
+
+on: [push, pull_request]
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Verificar commits con commitlint
+        run: |
+          npx commitlint --from=HEAD~10 --to=HEAD --verbose

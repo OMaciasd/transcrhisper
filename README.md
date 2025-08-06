@@ -31,18 +31,6 @@ flowchart TD
 
 ## 🚀 Features
 
-- Batch transcription of MP3 and MP4 files.
-- Automatic conversion of video files to MP3.
-- Audio splitting for long files.
-- Storage of transcriptions in text format.
-- Summary and metrics generation.
-- Simple web interface (FastAPI).
-- Logs and result tracking.
-
----
-
-## ✨ Features
-
 - 🎵 Batch transcription of `.mp3` and `.mp4` files
 - 🎥 Automatic conversion of videos to audio
 - ✂️ Audio splitting for long files
@@ -78,5 +66,16 @@ For detailed instructions on installation, setup, and usage, check out the [USAG
 ---
 
 > 🛠️ Built with ❤️ using [OpenAI Whisper](https://github.com/openai/whisper)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from the community! If you'd like to help improve this project, please check out the [CONTRIBUTING.md](./docs/CONTRIBUTING.md) guide for details on:
+
+- How to report bugs or request features
+- Coding conventions and code style
+- How to submit a pull request
+- Branching and commit message guidelines
 
 ---
