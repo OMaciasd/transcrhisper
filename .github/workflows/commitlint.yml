@@ -1,6 +1,9 @@
 # .github/workflows/commitlint.yml
 name: Lint Commits
 
+permissions:
+  contents: read
+
 on: [push, pull_request]
 
 jobs:
@@ -8,16 +11,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout código
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Instalar Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
 
-      - name: Instalar dependencias
+      - name: Install depends
         run: npm install
 
-      - name: Verificar commits con commitlint
+      - name: Validate commitlint
+        if: github.event_name == 'push'
         run: |
-          npx commitlint --from=HEAD~10 --to=HEAD --verbose
+          git log -1 --pretty=%B | npx commitlint
+
+      - name: Validate pull request commits
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=100
+          npx commitlint --from=origin/${{ github.base_ref }} --to=HEAD --verbose
